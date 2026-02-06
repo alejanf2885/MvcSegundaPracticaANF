@@ -1,0 +1,41 @@
+﻿@model List<Comic>
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Comics</h1>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle shadow-sm">
+            <thead class="table-dark">
+                <tr class="text-center">
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Comic comic in Model)
+                {
+                    <tr>
+                        <td class="text-center">
+                            <img src="@comic.Imagen"
+                                 class="img-thumbnail"
+                                 style="max-width: 120px;"
+                                 alt="@comic.Nombre" />
+                        </td>
+                        <td class="fw-bold">@comic.Nombre</td>
+                        <td>@comic.Descripcion</td>
+                        <td class="text-center">
+                            <a asp-controller="Comics"
+                               asp-action="Details"
+                               asp-route-id="@comic.IdComic"
+                               class="btn btn-primary btn-sm">
+                                Ver detalles
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

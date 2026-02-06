@@ -1,0 +1,25 @@
+﻿@model Comic
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <img src="@Model.Imagen" class="card-img-top img-fluid" alt="@Model.Nombre">
+
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-3">
+                        @Model.Nombre
+                    </h2>
+
+                    <h5 class="card-subtitle mb-2 text-muted">
+                        Descripción
+                    </h5>
+
+                    <p class="card-text">
+                        @Model.Descripcion
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
